@@ -7,7 +7,7 @@ The jsonrates API provides reliable, fast and free exchange rates and currency c
 
 jsonrates is perfect for developers who need a free and simple service for getting exchange rates instead of paying hundreds of dollar for the most providers.
 
-###### Functions
+##### Functions
 * Exchange Rates
 * Currency Conversion
 * Historical Data
