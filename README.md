@@ -13,6 +13,7 @@ instead of paying hundreds of dollar for the most providers.
 * Locale Transformation
 
 Website: [jsonrates.com](http://jsonrates.com/)
+
 The API documentation can be found at: [jsonrates.com/docs](http://jsonrates.com/docs/)
 
 ## PHP client
@@ -20,7 +21,7 @@ The API documentation can be found at: [jsonrates.com/docs](http://jsonrates.com
 ##### Basic usage
 
 ``` php
-include_once 'Jsonrates.php';
+include_once 'src/Jsonrates/Client.php';
 $jsonrates = new Jsonrates();
 ```
 
