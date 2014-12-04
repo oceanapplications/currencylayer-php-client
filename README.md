@@ -10,7 +10,7 @@ instead of paying hundreds of dollar for the most providers.
 * Exchange Rates
 * Currency Conversion
 * Historical Data
-* Locale Transformation.
+* Locale Transformation
 
 Website: [jsonrates.com](http://jsonrates.com/)
 
