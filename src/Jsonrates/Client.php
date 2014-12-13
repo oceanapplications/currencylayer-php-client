@@ -9,7 +9,7 @@ namespace Jsonrates;
  * @author Jamil Soufan (@jamsouf)
  * @link http://jsonrates.com/
  */
-class Jsonrates
+class Client
 {
     /**
      * Endpoint of the API
