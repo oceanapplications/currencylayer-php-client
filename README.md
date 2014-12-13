@@ -16,16 +16,29 @@ Website: [jsonrates.com](http://jsonrates.com/)
 
 The API documentation can be found at: [jsonrates.com/docs](http://jsonrates.com/docs/)
 
-## PHP client
+Installation
+-----
 
-##### Basic usage
+##### Via composer
+Install the latest version with `composer require jsonrates/api-client`
 
 ``` php
-include_once 'src/Jsonrates/Client.php';
-$jsonrates = new Jsonrates();
+require 'vendor/autoload.php';
+$jsonrates = new \Jsonrates\Client();
 ```
 
-###### Example: Get an exchange rate for two currencies
+##### Manually
+Download the file [`Client.php`](/src/Jsonrates/Client.php) to `/your/local/lib/path/`
+
+``` php
+require_once '/your/local/lib/path/Client.php';
+$jsonrates = new \Jsonrates\Client();
+```
+
+Usage
+-----
+
+##### Example: Get an exchange rate for two currencies
 
 ``` php
 $rate = $jsonrates
@@ -34,7 +47,7 @@ $rate = $jsonrates
   ->get();
 ```
 
-###### Example: Convert an USD amount to all other available currencies
+##### Example: Convert an USD amount to all other available currencies
 
 ``` php
 $rate = $jsonrates
@@ -43,7 +56,7 @@ $rate = $jsonrates
   ->convert();
 ```
 
-###### Example: Get a timeseries of rates for two currencies
+##### Example: Get a timeseries of rates for two currencies
 
 ``` php
 $rate = $jsonrates
@@ -54,7 +67,7 @@ $rate = $jsonrates
   ->historical();
 ```
 
-###### Example: Get an exchange rate for the currencies of two locales
+##### Example: Get an exchange rate for the currencies of two locales
 
 ``` php
 $rate = $jsonrates
