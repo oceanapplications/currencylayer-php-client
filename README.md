@@ -28,7 +28,7 @@ $jsonrates = new \Jsonrates\Client();
 ```
 
 ##### Manually
-Download and extract the [`latest release`](/releases/latest) to `/your/lib/path/`
+Download and extract the `latest release` to `/your/lib/path/`
 
 ``` php
 require_once '/your/lib/path/jsonrates-php/src/Jsonrates/Client.php';
