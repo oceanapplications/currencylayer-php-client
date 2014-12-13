@@ -50,7 +50,7 @@ $rate = $jsonrates
 ##### Example: Convert an USD amount to all other available currencies
 
 ``` php
-$rate = $jsonrates
+$amounts = $jsonrates
   ->base('USD')
   ->amount(2.99)
   ->convert();
@@ -59,7 +59,7 @@ $rate = $jsonrates
 ##### Example: Get a timeseries of rates for two currencies
 
 ``` php
-$rate = $jsonrates
+$rates = $jsonrates
   ->from('XBT')
   ->to('USD')
   ->dateStart('2014-11-02')
