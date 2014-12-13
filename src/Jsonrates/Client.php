@@ -1,5 +1,7 @@
 <?php
 
+namespace Jsonrates;
+
 /**
  * PHP client for jsonrates.com
  * 
