@@ -5,7 +5,7 @@ namespace Jsonrates;
 /**
  * PHP client for jsonrates.com
  * 
- * @version 1.0
+ * @version 1.0.0
  * @author Jamil Soufan (@jamsouf)
  * @link http://jsonrates.com/
  */
