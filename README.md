@@ -28,10 +28,10 @@ $jsonrates = new \Jsonrates\Client();
 ```
 
 ##### Manually
-Download and extract the `latest release` to `/your/lib/path/`
+Download and extract the `latest release` to `/your/libs/jsonrates/`
 
 ``` php
-require_once '/your/lib/path/jsonrates-php/src/Jsonrates/Client.php';
+require_once '/your/libs/jsonrates/php-client/src/Jsonrates/Client.php';
 $jsonrates = new \Jsonrates\Client();
 ```
 
