@@ -14,7 +14,7 @@ class Client
     /**
      * Endpoint of the API
      */
-    const endpoint = 'http://jsonrates.com/{endpoint}/';
+    const ENDPOINT = 'http://jsonrates.com/{endpoint}/';
     
     /**
      * API endpoint parameters
@@ -128,7 +128,7 @@ class Client
      */
     private function request($endpoint, $params)
     {
-        $url = str_replace('{endpoint}', $endpoint, self::endpoint).'?' . http_build_query($params);
+        $url = str_replace('{endpoint}', $endpoint, self::ENDPOINT).'?' . http_build_query($params);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
