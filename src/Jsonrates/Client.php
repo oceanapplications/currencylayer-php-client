@@ -5,7 +5,7 @@ namespace Jsonrates;
 /**
  * PHP client for jsonrates.com
  * 
- * @version 1.0.0
+ * @version 1.0.1
  * @author Jamil Soufan (@jamsouf)
  * @link http://jsonrates.com/
  */
@@ -46,13 +46,13 @@ class Client
             return $this;
         }
         
-        throw new BadMethodCallException('Call to undefined method '.$method.'()');
+        throw new \BadMethodCallException('Call to undefined method '.$method.'()');
     }
     
     /**
      * Request the API endpoint get
      * 
-     * @return float|array
+     * @return array
      */
     public function get()
     {
@@ -66,7 +66,7 @@ class Client
     /**
      * Request the API endpoint convert
      * 
-     * @return float|array
+     * @return array
      */
     public function convert()
     {
@@ -99,7 +99,7 @@ class Client
     /**
      * Request the API endpoint locale
      * 
-     * @return float|array
+     * @return array
      */
     public function locale()
     {
@@ -129,7 +129,7 @@ class Client
         $rsp = json_decode($json, true);
         
         if (array_key_exists('error', $rsp)) {
-            throw new InvalidArgumentException($rsp['error']);
+            throw new \InvalidArgumentException($rsp['error']);
         }
         
         return $rsp;
