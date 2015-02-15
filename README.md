@@ -1,6 +1,8 @@
 jsonrates - Currency exchange rates API
 =========
 
+[![Build Status](https://travis-ci.org/jsonrates/php-client.svg?branch=master)](https://travis-ci.org/jsonrates/php-client)
+
 The jsonrates API provides reliable, fast and free exchange rates and currency conversion for 168 currencies.
 All exchange rates are updated every 10 minutes and were collected from several providers.
 jsonrates is perfect for developers who need a free and simple service for getting exchange rates
