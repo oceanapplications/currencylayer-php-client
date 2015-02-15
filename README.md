@@ -41,7 +41,7 @@ Usage
 ##### Example: Get an exchange rate for two currencies
 
 ``` php
-$rate = $jsonrates
+$result = $jsonrates
   ->from('USD')
   ->to('EUR')
   ->get();
@@ -50,7 +50,7 @@ $rate = $jsonrates
 ##### Example: Convert an USD amount to all other available currencies
 
 ``` php
-$amounts = $jsonrates
+$result = $jsonrates
   ->base('USD')
   ->amount(2.99)
   ->convert();
@@ -59,7 +59,7 @@ $amounts = $jsonrates
 ##### Example: Get a timeseries of rates for two currencies
 
 ``` php
-$rates = $jsonrates
+$result = $jsonrates
   ->from('XBT')
   ->to('USD')
   ->dateStart('2014-11-02')
@@ -70,7 +70,7 @@ $rates = $jsonrates
 ##### Example: Get an exchange rate for the currencies of two locales
 
 ``` php
-$rate = $jsonrates
+$result = $jsonrates
   ->from('en_GB')
   ->to('de_DE')
   ->locale();

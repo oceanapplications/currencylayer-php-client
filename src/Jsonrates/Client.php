@@ -56,13 +56,11 @@ class Client
      */
     public function get()
     {
-        $rsp = $this->request('get', array(
+        return $this->request('get', array(
             'base' => $this->base,
             'from' => $this->from,
             'to' => $this->to)
         );
-        
-        return $this->base === null ? $rsp['rate'] : $rsp['rates'];
     }
     
     /**
@@ -72,15 +70,13 @@ class Client
      */
     public function convert()
     {
-        $rsp = $this->request('convert', array(
+        return $this->request('convert', array(
             'base' => $this->base,
             'from' => $this->from,
             'to' => $this->to,
             'amount' => $this->amount,
             'inverse' => $this->inverse)
         );
-        
-        return $this->base === null ? $rsp['amount'] : $rsp['amounts'];
     }
     
     /**
@@ -90,7 +86,7 @@ class Client
      */
     public function historical()
     {
-        $rsp = $this->request('historical', array(
+        return $this->request('historical', array(
             'base' => $this->base,
             'from' => $this->from,
             'to' => $this->to,
@@ -98,8 +94,6 @@ class Client
             'dateStart' => $this->dateStart,
             'dateEnd' => $this->dateEnd)
         );
-        
-        return $rsp['rates'];
     }
     
     /**
@@ -109,13 +103,11 @@ class Client
      */
     public function locale()
     {
-        $rsp = $this->request('locale', array(
+        return $this->request('locale', array(
             'base' => $this->base,
             'from' => $this->from,
             'to' => $this->to)
         );
-        
-        return $this->base === null ? $rsp['rate'] : $rsp['rates'];
     }
     
     /**
