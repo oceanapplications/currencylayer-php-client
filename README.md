@@ -16,8 +16,6 @@ instead of paying hundreds of dollar for the most providers.
 
 Website: [jsonrates.com](http://jsonrates.com/)
 
-The API documentation can be found at: [jsonrates.com/docs](http://jsonrates.com/docs/)
-
 Installation
 -----
 
@@ -77,3 +75,7 @@ $result = $jsonrates
   ->to('de_DE')
   ->locale();
 ```
+
+API Documentation
+-----
+See: [jsonrates.com/docs](http://jsonrates.com/docs/)
