@@ -1,6 +1,7 @@
 jsonrates - Currency exchange rates API
 =========
 
+[![Latest Stable Version](https://poser.pugx.org/jsonrates/api-client/v/stable.svg)](https://packagist.org/packages/jsonrates/api-client)
 [![Build Status](https://travis-ci.org/jsonrates/php-client.svg?branch=master)](https://travis-ci.org/jsonrates/php-client)
 
 The jsonrates API provides reliable, fast and free exchange rates and currency conversion for 168 currencies.
