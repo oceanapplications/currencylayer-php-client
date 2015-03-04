@@ -25,7 +25,7 @@ Install the latest version with `composer require jsonrates/api-client`
 
 ``` php
 require 'vendor/autoload.php';
-$jsonrates = new \Jsonrates\Client();
+$jsonrates = new \Jsonrates\Client('YOUR-API-KEY');
 ```
 
 ##### Manually
@@ -33,7 +33,7 @@ Download and extract the `latest release` to `/your/libs/jsonrates/`
 
 ``` php
 require_once '/your/libs/jsonrates/php-client/src/Jsonrates/Client.php';
-$jsonrates = new \Jsonrates\Client();
+$jsonrates = new \Jsonrates\Client('YOUR-API-KEY');
 ```
 
 Usage

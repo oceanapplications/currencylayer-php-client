@@ -8,7 +8,7 @@ class ClientTest extends \PHPUnit_Framework_TestCase
     
     protected function setUp()
     {
-        $this->jr = new Client();
+        $this->jr = new Client('jr-demo-54beb0044ee6a01f303c798d89e');
     }
     
     public function testRateForSameCurrenciesIsExactlyOne()

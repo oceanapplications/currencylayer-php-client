@@ -5,7 +5,7 @@ namespace Jsonrates;
 /**
  * PHP client for jsonrates.com
  * 
- * @version 1.0.1
+ * @version 1.1.1
  * @author Jamil Soufan (@jamsouf)
  * @link http://jsonrates.com/
  */
@@ -27,6 +27,16 @@ class Client
     private $date = null;
     private $dateStart = null;
     private $dateEnd = null;
+    private $apiKey = null;
+    
+    /**
+     * Constructor
+     * @param string $apiKey
+     */
+    public function __construct($apiKey = null)
+    {
+        $this->apiKey = $apiKey;
+    }
     
     /**
      * Magic setter for the endpoint parameters
@@ -120,6 +130,7 @@ class Client
      */
     private function request($endpoint, $params)
     {
+        $params['apiKey'] = $this->apiKey;
         $url = str_replace('{endpoint}', $endpoint, self::ENDPOINT).'?' . http_build_query($params);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
