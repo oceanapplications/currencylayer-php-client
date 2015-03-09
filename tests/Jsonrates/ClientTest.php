@@ -107,6 +107,24 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertNotNull($result['rates']['2015-01-04']);
     }
     
+    public function testHistoricalRatesWithPeriodForFiveMonthsGetsFiveResultObjects()
+    {
+        $result = $this->jr
+            ->from('GBP')
+            ->to('EUR')
+            ->dateStart('2014-10-10')
+            ->dateEnd('2015-02-10')
+            ->period('month')
+            ->historical();
+        
+        $this->assertCount(5, $result['rates']);
+        $this->assertNotNull($result['rates']['2014-10-10']);
+        $this->assertNotNull($result['rates']['2014-11-10']);
+        $this->assertNotNull($result['rates']['2014-12-10']);
+        $this->assertNotNull($result['rates']['2015-01-10']);
+        $this->assertNotNull($result['rates']['2015-02-10']);
+    }
+    
     public function testRateForSameLocalesIsExactlyOne()
     {
         $result = $this->jr

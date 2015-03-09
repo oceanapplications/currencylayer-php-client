@@ -5,7 +5,7 @@ namespace Jsonrates;
 /**
  * PHP client for jsonrates.com
  * 
- * @version 1.1.1
+ * @version 1.2.1
  * @author Jamil Soufan (@jamsouf)
  * @link http://jsonrates.com/
  */
@@ -27,6 +27,7 @@ class Client
     private $date = null;
     private $dateStart = null;
     private $dateEnd = null;
+    private $period = null;
     private $apiKey = null;
     
     /**
@@ -102,7 +103,8 @@ class Client
             'to' => $this->to,
             'date' => $this->date,
             'dateStart' => $this->dateStart,
-            'dateEnd' => $this->dateEnd)
+            'dateEnd' => $this->dateEnd,
+            'period' => $this->period)
         );
     }
     
@@ -165,6 +167,7 @@ class Client
             case 'date':
                 $this->dateStart = null;
                 $this->dateEnd = null;
+                $this->period = null;
                 break;
             case 'dateStart':
             case 'dateEnd':

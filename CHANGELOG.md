@@ -1,6 +1,9 @@
 CHANGELOG
 ===================
 
+* 1.2.1 (2015-03-09)
+ * Support for new historical parameter: `period`
+
 * 1.1.1 (2015-03-04)
  * Ability to set the API key at instantiation
  * Exceptions are now from the global and correct exception type
