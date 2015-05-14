@@ -14,7 +14,7 @@ class Client
     /**
      * Endpoint of the API
      */
-    const ENDPOINT = 'http://jsonrates.com/{endpoint}/';
+    const ENDPOINT = 'http://jsonrates.com';
     
     /**
      * API endpoint parameters
@@ -44,8 +44,8 @@ class Client
      * 
      * @param string $method
      * @param array $args
-     * @throws BadMethodCallException
-     * @return this
+     * @throws \BadMethodCallException
+     * @return self
      */
     public function __call($method, $args)
     {
@@ -67,7 +67,7 @@ class Client
      */
     public function get()
     {
-        return $this->request('get', array(
+        return $this->request('/get/', array(
             'base' => $this->base,
             'from' => $this->from,
             'to' => $this->to)
@@ -81,7 +81,7 @@ class Client
      */
     public function convert()
     {
-        return $this->request('convert', array(
+        return $this->request('/convert/', array(
             'base' => $this->base,
             'from' => $this->from,
             'to' => $this->to,
@@ -97,7 +97,7 @@ class Client
      */
     public function historical()
     {
-        return $this->request('historical', array(
+        return $this->request('/historical/', array(
             'base' => $this->base,
             'from' => $this->from,
             'to' => $this->to,
@@ -115,26 +115,36 @@ class Client
      */
     public function locale()
     {
-        return $this->request('locale', array(
+        return $this->request('/locale/', array(
             'base' => $this->base,
             'from' => $this->from,
-            'to' => $this->to)
-        );
+            'to' => $this->to
+        ));
     }
+
+	/**
+	 * Request the available currencies
+	 *
+	 * @return string[]
+	 */
+	public function currencies()
+	{
+		return $this->request('/currencies.json', array());
+	}
     
     /**
      * Execute the API request
      * 
      * @param string $endpoint
      * @param array $params
-     * @throws InvalidArgumentException
+     * @throws \InvalidArgumentException
      * @return string
      */
-    private function request($endpoint, $params)
+    protected function request($endpoint, $params)
     {
         $params['apiKey'] = $this->apiKey;
-        $url = str_replace('{endpoint}', $endpoint, self::ENDPOINT).'?' . http_build_query($params);
-        $ch = curl_init();
+        $url = self::ENDPOINT . $endpoint . '?' . http_build_query($params);
+	    $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $json = curl_exec($ch);

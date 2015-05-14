@@ -144,4 +144,9 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         
         $this->assertSame(8, strlen(substr($result['rate'], strpos($result['rate'], '.') + 1)));
     }
+
+	public function testCurrencyList()
+	{
+		// TODO write test for Client::currencies method
+	}
 }
