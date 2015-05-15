@@ -145,8 +145,22 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->assertSame(8, strlen(substr($result['rate'], strpos($result['rate'], '.') + 1)));
     }
 
-	public function testCurrencyList()
-	{
-		// TODO write test for Client::currencies method
-	}
+    public function testCurrencyList()
+    {
+        $result = $this->jr->currencies();
+        
+        $this->assertGreaterThan(160, count($result));
+        $this->assertSame('Euro', $result['EUR']);
+        $this->assertSame('US Dollar', $result['USD']);
+        $this->assertSame('Bitcoin', $result['XBT']);
+    }
+    
+    public function testLocaleList()
+    {
+        $result = $this->jr->locales();
+        
+        $this->assertGreaterThan(250, count($result));
+        $this->assertSame('EUR', $result['de_DE']['currency']);
+        $this->assertSame('USD', $result['en_US']['currency']);
+    }
 }

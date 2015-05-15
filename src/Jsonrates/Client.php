@@ -5,7 +5,7 @@ namespace Jsonrates;
 /**
  * PHP client for jsonrates.com
  * 
- * @version 1.2.1
+ * @version 1.3.1
  * @author Jamil Soufan (@jamsouf)
  * @link http://jsonrates.com/
  */
@@ -32,6 +32,7 @@ class Client
     
     /**
      * Constructor
+     * 
      * @param string $apiKey
      */
     public function __construct($apiKey = null)
@@ -70,8 +71,8 @@ class Client
         return $this->request('/get/', array(
             'base' => $this->base,
             'from' => $this->from,
-            'to' => $this->to)
-        );
+            'to' => $this->to
+        ));
     }
     
     /**
@@ -86,8 +87,8 @@ class Client
             'from' => $this->from,
             'to' => $this->to,
             'amount' => $this->amount,
-            'inverse' => $this->inverse)
-        );
+            'inverse' => $this->inverse
+        ));
     }
     
     /**
@@ -104,8 +105,8 @@ class Client
             'date' => $this->date,
             'dateStart' => $this->dateStart,
             'dateEnd' => $this->dateEnd,
-            'period' => $this->period)
-        );
+            'period' => $this->period
+        ));
     }
     
     /**
@@ -122,15 +123,25 @@ class Client
         ));
     }
 
-	/**
-	 * Request the available currencies
-	 *
-	 * @return string[]
-	 */
-	public function currencies()
-	{
-		return $this->request('/currencies.json', array());
-	}
+    /**
+     * Request the available currencies
+     *
+     * @return string[]
+     */
+    public function currencies()
+    {
+        return $this->request('/currencies.json', array());
+    }
+    
+    /**
+     * Request the available locales
+     *
+     * @return string[]
+     */
+    public function locales()
+    {
+        return $this->request('/locales.json', array());
+    }
     
     /**
      * Execute the API request
@@ -144,7 +155,7 @@ class Client
     {
         $params['apiKey'] = $this->apiKey;
         $url = self::ENDPOINT . $endpoint . '?' . http_build_query($params);
-	    $ch = curl_init();
+        $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         $json = curl_exec($ch);

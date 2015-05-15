@@ -1,6 +1,9 @@
 CHANGELOG
 ===================
 
+* 1.3.1 (2015-05-15)
+ * New methods to get the available currencies and locales
+
 * 1.2.1 (2015-03-09)
  * Support for new historical parameter: `period`
 
