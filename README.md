@@ -3,7 +3,7 @@
 
 We're happy to announce the integration of [jsonrates](http://jsonrates.com) into the [currencylayer API](https://currencylayer.com/). 
 
-You may resume your free API access by [signing up here](https://currencylayer.com?ref=jsonrates). Please note that the current jsonrates API has been **deprecated** and will become unavailable by June 23rd 23:59:59 PM London time. 
+You may resume your free API access by [signing up here](https://currencylayer.com?ref=jsonrates). Please note that the current jsonrates API has been **deprecated** and will become unavailable by June 30th 23:59:59 PM London time. 
 
 [Read more](http://jsonrates.com/about)
 
