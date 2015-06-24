@@ -1,95 +1,85 @@
-
-**Important**
-
-We're happy to announce the integration of [jsonrates](http://jsonrates.com) into the [currencylayer API](https://currencylayer.com/). 
-
-You may resume your free API access by [signing up here](https://currencylayer.com?ref=jsonrates). Please note that the current jsonrates API has been **deprecated** and will become unavailable by June 30th 23:59:59 PM London time. 
-
-[Read more](http://jsonrates.com/about)
-
-*This Github Repository has been deprecated and will be adjusted to work with the currencylayer API shortly.*
-
+Stay up to date by following @apilayernet on Twitter.
 ____________
 
-jsonrates - Currency exchange rates API
+currencylayer API - PHP client
 =========
 
-[![Latest Stable Version](https://poser.pugx.org/jsonrates/api-client/v/stable.svg)](https://packagist.org/packages/jsonrates/api-client)
-[![Build Status](https://travis-ci.org/jsonrates/php-client.svg?branch=master)](https://travis-ci.org/jsonrates/php-client)
+Currencylayer provides a JSON-based REST API, delivering reliable and accurate currency exchange rates for 168 world currencies and precious metals at an affordable price, which makes it the perfect instrument for startups and online businesses, as well as for larger companies in need of reliable financial data via an easy to use interface. The currencylayer API is widely used to power financial departments, mobile applications and back-office systems around the world.
 
-The jsonrates API provides reliable, fast and free exchange rates and currency conversion for 168 currencies.
-All exchange rates are updated every 10 minutes and were collected from several providers.
-jsonrates is perfect for developers who need a free and simple service for getting exchange rates
-instead of paying hundreds of dollar for the most providers.
-
-##### Functions
-* Exchange Rates
+##### Features
+* Real-time Exchange Rates
+* Historical Rates back to 1999
 * Currency Conversion
-* Historical Data
-* Locale Transformation
+* Time-Frame Queries
+* Currency-Change Queries
 
-Website: [jsonrates.com](http://jsonrates.com/)
+Website: [currencylayer.com](https://currencylayer.com/)
 
 Installation
 -----
 
-##### Via composer
-Install the latest version with `composer require jsonrates/api-client`
+Download and extract the `latest release` to `/your/libs/currencylayer/`
 
 ``` php
-require 'vendor/autoload.php';
-$jsonrates = new \Jsonrates\Client('YOUR-API-KEY');
-```
-
-##### Manually
-Download and extract the `latest release` to `/your/libs/jsonrates/`
-
-``` php
-require_once '/your/libs/jsonrates/php-client/src/Jsonrates/Client.php';
-$jsonrates = new \Jsonrates\Client('YOUR-API-KEY');
+require_once '/your/libs/currencylayer/php-client/src/currencylayer/client.php';
+$currencylayer = new \currencylayer\client('YOUR_ACCESS_KEY');
 ```
 
 Usage
 -----
 
-##### Example: Get an exchange rate for two currencies
+##### Example: Request real-time rates via "live" endpoint
 
 ``` php
-$result = $jsonrates
-  ->from('USD')
-  ->to('EUR')
-  ->get();
+$result = $currencylayer
+  ->source('USD')
+  ->currencies('JPY,GBP,AUD')
+  ->live();
 ```
 
-##### Example: Convert an USD amount to all other available currencies
+##### Example: Request historical rates via "historical" endpoint
 
 ``` php
-$result = $jsonrates
-  ->base('USD')
-  ->amount(2.99)
-  ->convert();
-```
-
-##### Example: Get a timeseries of rates for two currencies
-
-``` php
-$result = $jsonrates
-  ->from('XBT')
-  ->to('USD')
-  ->dateStart('2014-11-02')
-  ->dateEnd('2014-11-05')
+$result = $currencylayer
+  ->date('2015-01-01')
+  ->source('USD')
+  ->currencies('JPY,GBP,AUD')
   ->historical();
 ```
 
-##### Example: Get an exchange rate for the currencies of two locales
+##### Example: Convert currencies via "convert" endpoint
 
 ``` php
-$result = $jsonrates
-  ->from('en_GB')
-  ->to('de_DE')
-  ->locale();
+$result = currencylayer
+  ->from('USD')
+  ->to('JPY')
+  ->amount('10')
+  ->date('2015-01-01')
+  ->convert();
+```
+
+##### Example: Request time-frame (time-series) data via "timeframe" endpoint
+
+``` php
+$result = $currencylayer
+  ->source('USD')
+  ->currencies('JPY,GBP,AUD')
+  ->start_date('2014-01-01')
+  ->end_date('2014-02-01')
+  ->timeframe();
+```
+
+##### Example: Request currency-change data via "change" endpoint
+
+``` php
+$result = $currencylayer
+  ->source('USD')
+  ->currencies('JPY,GBP,AUD')
+  ->start_date('2014-01-01')
+  ->end_date('2014-02-01')
+  ->change();
 ```
 
 API Documentation
 -----
-See: [jsonrates.com/docs](http://jsonrates.com/docs/)
+See: [currencylayer.com/documentation](https://currencylayer.com/documentation)
