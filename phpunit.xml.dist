@@ -1,7 +1,0 @@
-<phpunit bootstrap="tests/bootstrap.php">
-    <testsuites>
-        <testsuite name="Jsonrates Test Suite">
-            <directory>tests/Jsonrates/</directory>
-        </testsuite>
-    </testsuites>
-</phpunit>
