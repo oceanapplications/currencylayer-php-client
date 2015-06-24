@@ -37,6 +37,7 @@ $result = $currencylayer
   ->live();
 ```
 
+
 ##### Example: Request historical rates via "historical" endpoint
 
 ``` php
@@ -46,6 +47,7 @@ $result = $currencylayer
   ->currencies('JPY,GBP,AUD')
   ->historical();
 ```
+
 
 ##### Example: Convert currencies via "convert" endpoint
 
@@ -58,6 +60,7 @@ $result = currencylayer
   ->convert();
 ```
 
+
 ##### Example: Request time-frame (time-series) data via "timeframe" endpoint
 
 ``` php
@@ -68,6 +71,7 @@ $result = $currencylayer
   ->end_date('2014-02-01')
   ->timeframe();
 ```
+
 
 ##### Example: Request currency-change data via "change" endpoint
 
