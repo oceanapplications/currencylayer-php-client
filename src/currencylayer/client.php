@@ -1,4 +1,3 @@
-```php
 <?php
 
 namespace currencylayer;
@@ -142,4 +141,3 @@ class client
 }
 
 ?>
-```
