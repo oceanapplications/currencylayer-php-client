@@ -25,6 +25,19 @@ require_once '/your/libs/currencylayer/php-client/src/currencylayer/client.php';
 $currencylayer = new \currencylayer\client('YOUR_ACCESS_KEY');
 ```
 
+Composer 
+```
+composer require oceanapplications/currencylayer-php-client
+
+```
+
+```
+Use OceanApplications\currencylayer;
+
+$currencylayer = new currencylayer\client('API Key');
+
+```
+
 Usage
 -----
 
