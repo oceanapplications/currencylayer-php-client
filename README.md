@@ -18,8 +18,7 @@ Website: [currencylayer.com](https://currencylayer.com/)
 Installation
 -----
 
-### RECOMMENDED
-#### With Composer
+#### With Composer *RECOMMENDED*
 ```
 composer require oceanapplications/currencylayer-php-client
 ```
