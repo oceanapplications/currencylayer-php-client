@@ -1,0 +1,19 @@
+{
+  "name": "oceanapplications/currencylayer-php-client",
+  "description": "Currencylayer API PHP client",
+  "license": "MIT",
+  "keywords": ["currencylayer"],
+  "authors": [
+    {
+      "name": "Ocean Applications",
+      "email": "oceanapplications@gmail.com"
+    }
+  ],
+  "require": {},
+  "require-dev": {},
+  "autoload": {
+    "psr-4": {
+      "OceanApplications\\currencylayer-php-client\\": "src"
+    }
+  }
+}
