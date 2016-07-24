@@ -1,6 +1,6 @@
 <?php
 
-namespace currencylayer;
+namespace OceanApplications\currencylayer;
 
 /**
  * PHP client for the currencylayer API

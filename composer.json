@@ -13,7 +13,6 @@
   "require-dev": {},
   "autoload": {
     "psr-4": {
-      "OceanApplications\\currencylayer-php-client\\": "src"
     }
   }
 }
