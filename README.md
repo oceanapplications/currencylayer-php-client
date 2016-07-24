@@ -34,7 +34,6 @@ composer require oceanapplications/currencylayer-php-client
 Use OceanApplications\currencylayer;
 
 $currencylayer = new currencylayer\client('API Key');
-
 ```
 
 Usage
