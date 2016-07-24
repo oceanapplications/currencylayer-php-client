@@ -28,7 +28,6 @@ $currencylayer = new \currencylayer\client('YOUR_ACCESS_KEY');
 Composer 
 ```
 composer require oceanapplications/currencylayer-php-client
-
 ```
 
 ```
