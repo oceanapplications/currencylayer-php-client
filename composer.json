@@ -13,6 +13,7 @@
   "require-dev": {},
   "autoload": {
     "psr-4": {
+      "OceanApplications\\currencylayer\\": "src/"
     }
   }
 }
