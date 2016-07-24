@@ -18,14 +18,8 @@ Website: [currencylayer.com](https://currencylayer.com/)
 Installation
 -----
 
-Download and extract the `latest release` to `/your/libs/currencylayer/`
-
-``` php
-require_once '/your/libs/currencylayer/php-client/src/currencylayer/client.php';
-$currencylayer = new \currencylayer\client('YOUR_ACCESS_KEY');
-```
-
-Composer 
+#### RECOMMENDED
+Composer
 ```
 composer require oceanapplications/currencylayer-php-client
 ```
@@ -35,6 +29,14 @@ Use OceanApplications\currencylayer;
 
 $currencylayer = new currencylayer\client('API Key');
 ```
+
+
+Download and extract the `latest release` to `/your/libs/currencylayer/`
+``` php
+require_once '/your/libs/currencylayer/php-client/src/currencylayer/client.php';
+$currencylayer = new \currencylayer\client('YOUR_ACCESS_KEY');
+```
+
 
 Usage
 -----
