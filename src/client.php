@@ -10,7 +10,7 @@ namespace OceanApplications\currencylayer;
  */
 class client
 {
-	
+    
     /**
      * API base URL
      */
@@ -38,7 +38,87 @@ class client
     {
         $this->access_key = $access_key;
     }
-        
+
+    /**
+     * @param $source
+     * @return $this
+     */
+    public function source($source)
+    {
+        $this->source = $source;
+        return $this;
+    }
+
+    /**
+     * @param $currencies
+     * @return $this
+     */
+    public function currencies($currencies)
+    {
+        $this->currencies = $currencies;
+        return $this;
+    }
+
+    /**
+     * @param $from
+     * @return mixed
+     */
+    public function from($from)
+    {
+        $this->from = $from;
+        return $from;
+    }
+
+    /**
+     * @param $to
+     * @return $this
+     */
+    public function to($to)
+    {
+        $this->to = $to;
+        return $this;
+    }
+
+    /**
+     * @param $amount
+     * @return $this
+     */
+    public function amount($amount)
+    {
+        $this->amount = $amount;
+        return $this;
+    }
+
+    /**
+     * @param $date
+     * @return $this
+     */
+    public function date($date)
+    {
+        $this->date = $date;
+        return $this;
+    }
+
+    /**
+     * @param $start_date
+     * @return $this
+     */
+    public function start_date($start_date)
+    {
+        $this->start_date = $start_date;
+        return $this;
+    }
+
+    /**
+     * @param $end_date
+     * @return $this
+     */
+    public function end_date($end_date)
+    {
+        $this->end_date = $end_date;
+        return $this;
+    }
+
     /**
      * Request the API's "live" endpoint
      * 
@@ -121,8 +201,8 @@ class client
      */
     protected function request($endpoint, $params)
     {
-        		
-		$params['access_key'] = $this->access_key;
+                
+        $params['access_key'] = $this->access_key;
         $url = self::ENDPOINT . $endpoint . '?' . http_build_query($params);
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
@@ -130,7 +210,7 @@ class client
         $json = curl_exec($ch);
         curl_close($ch);
         $rsp = json_decode($json, true);
-	
+    
         if (array_key_exists('error', $rsp)) {
             throw new \InvalidArgumentException($rsp['error']);
         }
