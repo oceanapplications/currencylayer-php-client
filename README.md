@@ -18,8 +18,8 @@ Website: [currencylayer.com](https://currencylayer.com/)
 Installation
 -----
 
-#### RECOMMENDED
-Composer
+## RECOMMENDED
+#### With Composer
 ```
 composer require oceanapplications/currencylayer-php-client
 ```
@@ -30,7 +30,7 @@ Use OceanApplications\currencylayer;
 $currencylayer = new currencylayer\client('API Key');
 ```
 
-
+#### without composer
 Download and extract the `latest release` to `/your/libs/currencylayer/`
 ``` php
 require_once '/your/libs/currencylayer/php-client/src/currencylayer/client.php';
