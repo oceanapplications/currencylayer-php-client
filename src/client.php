@@ -66,13 +66,13 @@ class client
     /**
      * @param $from
      *
-     * @return mixed
+     * @return $this
      */
     public function from($from)
     {
         $this->from = $from;
 
-        return $from;
+        return $this;
     }
 
     /**
