@@ -229,7 +229,8 @@ class client
         $rsp = json_decode($json, true);
 
         if (array_key_exists('error', $rsp)) {
-            throw new \InvalidArgumentException($rsp['error']);
+            $error = $rsp['error'];
+            throw new \InvalidArgumentException($error['info'], $error['code']);
         }
 
         return $rsp;
