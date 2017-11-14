@@ -170,7 +170,7 @@ class client
      */
     public function historical()
     {
-        $this->request('/historical', [
+        return $this->request('/historical', [
             'date'       => $this->date,
             'currencies' => $this->currencies,
             'source'     => $this->source,
