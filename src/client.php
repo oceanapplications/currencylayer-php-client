@@ -230,6 +230,7 @@ class client
 
         if (array_key_exists('error', $rsp)) {
             $error = $rsp['error'];
+
             throw new \InvalidArgumentException($error['info'], $error['code']);
         }
 
